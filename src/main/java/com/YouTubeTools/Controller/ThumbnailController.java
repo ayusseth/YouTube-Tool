@@ -20,7 +20,13 @@ public class ThumbnailController {
     @PostMapping("/get-thumbnail")
     public String showThumbnail(@RequestParam("videoUrlOrId") String videoUrlOrId, Model model) {//this Model is used to send error message at frontend
         String videoId= service.extractVideoId(videoUrlOrId);
-        return "thumbnails";
+        if(videoId==null){
+            model.addAttribute("error","Invalid YouTube URL");
+            return "thumbnails";
+        }
+        String thumbnailUrl="https://img.youtube.com/vi/"+ videoId+"/maxresdefault.jpg";
+        model.addAttribute("thumbnailUrl",thumbnailUrl);
+        return "thumbnail";
     }
 
 }
