@@ -18,7 +18,7 @@ public class ThumbnailController {
     }
 
     @PostMapping("/get-thumbnail")
-    public String showThumbnail(@RequestParam("videoUrlOrId") String videoUrlOrId, Module model) {
+    public String showThumbnail(@RequestParam("videoUrlOrId") String videoUrlOrId, Model model) {//this Model is used to send error message at frontend
         String videoId= service.extractVideoId(videoUrlOrId);
         return "thumbnails";
     }
