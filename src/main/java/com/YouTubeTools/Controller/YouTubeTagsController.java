@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/youtube")
 public class YouTubeTagsController {
 
+    @Autowired
+    private YouTubeService youTubeService;
     @Value("${youtube.api.key}")
     private String apiKey;
 
