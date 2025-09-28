@@ -32,6 +32,18 @@ public class YouTubeTagsController {
             model.addAttribute("error","Video title is required");
        }
        return "home";
+
+       try{
+           SearchVideo result=youTubeService.searchVideos(videoTitle);
+           model.addAttribute("primaryVideo",result.getPrimaryVideo());
+           model.addAttribute("relatedVideos",result.getRelatedVideo());
+           return "home";
+
+       } catch (Exception e) {
+            model.addAttribute("error",e.getMessage());
+            return "home";
+       }
+       return null;
     }
 
 }
