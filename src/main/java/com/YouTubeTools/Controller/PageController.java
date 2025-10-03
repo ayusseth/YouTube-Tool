@@ -10,7 +10,6 @@ public class PageController {
     public String home(){
         return "home";
     }
-
     @GetMapping("/video-details")
     public String videoDetails(){
         return "video-details";
