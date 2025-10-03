@@ -12,7 +12,7 @@ public class PageController {
     }
 
     @GetMapping("/video-details")
-    public String vidoeDetails(){
+    public String videoDetails(){
         return "video-details";
     }
 }
