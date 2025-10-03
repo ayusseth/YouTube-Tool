@@ -18,7 +18,7 @@ public class YouTubeTagsController {
     @Value("${youtube.api.key}")
     private String apiKey;
 
-    private boolean isApiKeyConfigured(){
+    private boolean isApiKeyConfiguried(){
         return apiKey!=null && !apiKey.isEmpty();
     }
 
